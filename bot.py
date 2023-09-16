@@ -75,14 +75,13 @@ Send me any file I will save it in my Database. Also works for channel. Add me t
 📢 **Updates Channel:** @Sujan_BotZ 
 """
 
-HELP_TEXT = """**Hᴏᴡ Tᴏ Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Wᴇʙsɪᴛᴇ:**
+HELP_TEXT = """Hᴏᴡ Tᴏ Verify:
 
-Sᴛᴇᴘ Nᴏ 1 : Jᴜsᴛ Cᴏᴘʏ Yᴏᴜʀ Aᴄᴄᴏᴜɴᴛ Aᴘɪ Tᴏᴋᴇɴ.
+Sᴛᴇᴘ Nᴏ 1 : Just Copy This (6c5db31980885e46221e90106f1d47b8295aa0f8) Token.
 
-Sᴛᴇᴘ Nᴏ 2 : Tʜᴇɴ Cᴏᴍ Aɢᴀɪɴ Hᴇʀᴇ Aɴᴅ Usᴇ /api Tᴏ Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Yᴏᴜʀ Aᴄᴄᴏᴜɴᴛ.
+Sᴛᴇᴘ Nᴏ 2 : Then Use /verify Paste Token Here.
 
-Exᴀᴍᴘʟᴇ : `/verify 6c5db31980885e46221e90106f1d47b8295aa0f8` """
-
+Exᴀᴍᴘʟᴇ : /verify 6c5db31980885e46221e90106f1d47b8295aa0f8 """
 
 Bot = Client(
     name=Config.BOT_USERNAME,
