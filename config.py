@@ -7,8 +7,8 @@ import time
 class Config(object):
 	API_ID = int(os.environ.get("API_ID", "25502576"))
 	API_HASH = os.environ.get("API_HASH", "f0f35dbb5b0081cdc8d3c9d5383c4628")
-	BOT_TOKEN = os.environ.get("BOT_TOKEN", "6358983740:AAFEd3h7Tdn2VtJbuaYB6k8LzHOkzGQkvzM")
-	BOT_USERNAME = os.environ.get("BOT_USERNAME", "Shortener_File_Store_Bot")
+	BOT_TOKEN = os.environ.get("BOT_TOKEN", "6449209866:AAG9QJDwNhJI14rXM2zMVvt7yIO_F8fsphY")
+	BOT_USERNAME = os.environ.get("BOT_USERNAME", "TG_File_Store_Ro_Bot")
 	DB_CHANNEL = int(os.environ.get("DB_CHANNEL", "-1001936300025"))
 	BOT_OWNER = int(os.environ.get("BOT_OWNER", "5123039648"))
 	DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://SujanC7:SujanC7@cluster0.vst9zln.mongodb.net/?retryWrites=true&w=majority")
