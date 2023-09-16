@@ -42,7 +42,7 @@ from plugins.users_api import get_user, update_user_info
 
 MediaList = {}
 
-START_MEDIA = "https://graph.org/file/6b16ad03f00948d2d719e.jpg"
+START_MEDIA = "https://graph.org/file/a18cf9f447a1c34e5a20a.jpg"
 
 START_TEXT = """**Hɪ/Hᴇʟʟᴏ [{}](tg://user?id={})**
 
@@ -77,9 +77,9 @@ Send me any file I will save it in my Database. Also works for channel. Add me t
 
 HELP_TEXT = """Hᴏᴡ Tᴏ Verify:
 
-Sᴛᴇᴘ Nᴏ 1 : Just Copy This (6c5db31980885e46221e90106f1d47b8295aa0f8) Token.
+Sᴛᴇᴘ Nᴏ 1 : Just Copy This Token (6c5db31980885e46221e90106f1d47b8295aa0f8).
 
-Sᴛᴇᴘ Nᴏ 2 : Then Use /verify Paste Token Here.
+Sᴛᴇᴘ Nᴏ 2 : Then Use /verify (Paste Token Here).
 
 Exᴀᴍᴘʟᴇ : /verify 6c5db31980885e46221e90106f1d47b8295aa0f8 """
 
@@ -118,7 +118,7 @@ async def start(bot: Client, cmd: Message):
                 user_api = cmd.command[1].strip().replace("verify_", "")
                 await update_user_info(user_id, {"shortener_verify": user_api})
 
-            return await cmd.reply_text(f"You have successfully verified your token\n\nYour Token: {user_api}\n\nStart sending me Files" )
+            return await cmd.reply_text(f"Your Token successfully verified\n\nYour Token: {user_api}\n\nStart sending me Files" )
     except Exception as e:
         print(e)
         
@@ -171,7 +171,7 @@ async def main(bot: Client, message: Message):
         user = await get_user(message.from_user.id)
 
         if not user["shortener_api"]:
-            return await message.reply_text(f"First You Have To Verify (6c5db31980885e46221e90106f1d47b8295aa0f8) Token\n\n[Just Copy Token☝️](https://t.me/Sujan_BotZ)")
+            return await message.reply_text(f"First You Have To Verify\n\nYour Token: 6c5db31980885e46221e90106f1d47b8295aa0f8\n\n[Just Copy This Token☝️](https://t.me/Sujan_BotZ)")
 
         await add_user_to_database(bot, message)
 
@@ -248,7 +248,7 @@ async def shortener_api_handler(bot, m: Message):
     elif len(cmd) == 2:    
         api = cmd[1].strip()
         await update_user_info(user_id, {"shortener_api": api})
-        await m.reply("Shortener API updated successfully to " + api)
+        await m.reply("Your Token Updated successfully To " + api)
         
 @Bot.on_message(filters.private & filters.command("broadcast") & filters.user(Config.BOT_OWNER) & filters.reply)
 async def broadcast_handler_open(_, m: Message):
