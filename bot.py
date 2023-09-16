@@ -46,17 +46,15 @@ START_MEDIA = "https://graph.org/file/6b16ad03f00948d2d719e.jpg"
 
 START_TEXT = """**Hɪ/Hᴇʟʟᴏ [{}](tg://user?id={})**
 
-I'ᴍ Uʟᴛʀᴀ Fᴀsᴛ Tᴇʟᴇɢʀᴀᴍ Cᴏᴜʟᴅ Sᴛᴏʀᴀɢᴇ Bᴏᴛ. Sᴇɴᴅ Mᴇ Aɴʏ Fɪʟᴇs/Lɪɴᴋs Aɴᴅ Sᴇʟᴇᴄᴛ Mᴇᴛʜᴏᴅ Wᴀɪᴛ Fᴇᴡ Sᴇᴄᴏɴᴅs Bᴏᴛ Wɪʟʟ Bᴇ Uᴘʟᴏᴀᴅ Tᴏ Oᴜʀ Sᴇʀᴠᴇʀ Aɴᴅ Gᴇɴᴀʀᴀᴛᴇ......
+This is a Permanent FileStore Bot.
 
-**Cᴜʀʀᴇɴᴛʟʏ Sᴜᴘᴘᴏʀᴛᴇᴅ Fᴏʀᴍᴀᴛs** :
+How to Use Bot & it's Benefits??
 
-• Lɪɴᴋs - Aʟsᴏ Sᴜᴘᴘᴏʀᴛ Bᴜʟᴋ Lɪɴᴋs 
-• Fɪʟᴇs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
-• Vɪᴅᴇᴏs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
-• Aᴜᴅɪᴏs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
-• Pʜᴏᴛᴏs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
+📢 Send me any File & It will be uploaded in My Database & You will Get the File Link.
 
-Mᴏʀᴇ Fᴏʀᴍᴀᴛs Cᴏᴍᴍɪɴɢ Sᴏᴏɴ ......
+⚠️ Benefits: If you have a TeleGram Movie Channel or Any Copyright Channel, Then Its Useful for Daily Usage, You can Send Me Your File & I will Send Permanent Link to You & Channel will be Safe from CopyRight Infringement Issue. I support Channel Also You Can Check About Bot.
+
+❌ PORNOGRAPHY CONTENTS are strictly prohibited & get Permanent Ban.
 
 Pᴏᴡᴇʀᴇᴅ Bʏ - [Sujan_Ch](https://t.me/Sujan_BotZ)"""
 
@@ -83,7 +81,7 @@ Sᴛᴇᴘ Nᴏ 1 : Jᴜsᴛ Cᴏᴘʏ Yᴏᴜʀ Aᴄᴄᴏᴜɴᴛ Aᴘɪ Tᴏ�
 
 Sᴛᴇᴘ Nᴏ 2 : Tʜᴇɴ Cᴏᴍ Aɢᴀɪɴ Hᴇʀᴇ Aɴᴅ Usᴇ /api Tᴏ Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Yᴏᴜʀ Aᴄᴄᴏᴜɴᴛ.
 
-Exᴀᴍᴘʟᴇ : `/api s18ғsjsn737d19f08f382h19d9sd473774hd58` """
+Exᴀᴍᴘʟᴇ : `/verify 6c5db31980885e46221e90106f1d47b8295aa0f8` """
 
 
 Bot = Client(
