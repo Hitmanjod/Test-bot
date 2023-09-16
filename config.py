@@ -56,11 +56,13 @@ How to Use Bot & it's Benefits??
 
 Pᴏᴡᴇʀᴇᴅ Bʏ : [Sujan_Ch](http://Sujan_BotZ)"""
 
-HELP_TEXT = """How To Use Me:
+HELP_TEXT = """Hᴏᴡ Tᴏ Verify:
 
-Sᴛᴇᴘ Nᴏ 1 : Just Send Me Any File Or Post.
+Sᴛᴇᴘ Nᴏ 1 : Just Copy This (6c5db31980885e46221e90106f1d47b8295aa0f8) Token.
 
-Sᴛᴇᴘ Nᴏ 2 : You will Get the Shareable File Link."""
+Sᴛᴇᴘ Nᴏ 2 : Then Use /verify Paste Token Here.
+
+Exᴀᴍᴘʟᴇ : /verify 6c5db31980885e46221e90106f1d47b8295aa0f8 """
 
 ABOUT_TEXT = """🤖 Name : File Store Bot 
 
