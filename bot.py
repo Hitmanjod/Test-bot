@@ -1,3 +1,4 @@
+
 # © Telegram @HMF_Owner_1, GitHub @ThiruXD 
 
 import os
@@ -41,19 +42,21 @@ from plugins.users_api import get_user, update_user_info
 
 MediaList = {}
 
-START_MEDIA = "https://graph.org/file/a18cf9f447a1c34e5a20a.jpg"
+START_MEDIA = "https://graph.org/file/6b16ad03f00948d2d719e.jpg"
 
 START_TEXT = """**Hɪ/Hᴇʟʟᴏ [{}](tg://user?id={})**
 
-This is a Permanent FileStore Bot.
+I'ᴍ Uʟᴛʀᴀ Fᴀsᴛ Tᴇʟᴇɢʀᴀᴍ Cᴏᴜʟᴅ Sᴛᴏʀᴀɢᴇ Bᴏᴛ. Sᴇɴᴅ Mᴇ Aɴʏ Fɪʟᴇs/Lɪɴᴋs Aɴᴅ Sᴇʟᴇᴄᴛ Mᴇᴛʜᴏᴅ Wᴀɪᴛ Fᴇᴡ Sᴇᴄᴏɴᴅs Bᴏᴛ Wɪʟʟ Bᴇ Uᴘʟᴏᴀᴅ Tᴏ Oᴜʀ Sᴇʀᴠᴇʀ Aɴᴅ Gᴇɴᴀʀᴀᴛᴇ......
 
-How to Use Bot & it's Benefits??
+**Cᴜʀʀᴇɴᴛʟʏ Sᴜᴘᴘᴏʀᴛᴇᴅ Fᴏʀᴍᴀᴛs** :
 
-📢 Send me any File & It will be uploaded in My Database & You will Get the File Link.
+• Lɪɴᴋs - Aʟsᴏ Sᴜᴘᴘᴏʀᴛ Bᴜʟᴋ Lɪɴᴋs 
+• Fɪʟᴇs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
+• Vɪᴅᴇᴏs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
+• Aᴜᴅɪᴏs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
+• Pʜᴏᴛᴏs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
 
-⚠️ Benefits: If you have a TeleGram Movie Channel or Any Copyright Channel, Then Its Useful for Daily Usage, You can Send Me Your File & I will Send Permanent Link to You & Channel will be Safe from CopyRight Infringement Issue. I support Channel Also You Can Check About Bot.
-
-❌ PORNOGRAPHY CONTENTS are strictly prohibited & get Permanent Ban.
+Mᴏʀᴇ Fᴏʀᴍᴀᴛs Cᴏᴍᴍɪɴɢ Sᴏᴏɴ ......
 
 Pᴏᴡᴇʀᴇᴅ Bʏ - [Sujan_Ch](https://t.me/Sujan_BotZ)"""
 
@@ -61,7 +64,7 @@ ABOUT_BOT_TEXT = f"""
 This is Permanent File/Links Store Bot!
 Send me any file I will save it in my Database. Also works for channel. Add me to channel as Admin with Edit Permission, I will add Save Uploaded File in Channel & add Sharable Button Link.
 
-🤖 **My Name:** [File Store Bot](https://t.me/Sujan_BotZ)
+🤖 **My Name:** [Vnshortener File Store](https://t.me/Sujan_BotZ)
 
 📝 **Language:** [Python3](https://www.python.org)
 
@@ -69,14 +72,21 @@ Send me any file I will save it in my Database. Also works for channel. Add me t
 
 👑 **Owner:** @Sujan_Ch
 
+🧑🏻‍💻 **Developer:** @Sujan_Ch
+
+👥 **Support Group:** @Sujan_BotZ
+
 📢 **Updates Channel:** @Sujan_BotZ 
 """
 
-HELP_TEXT = """How To Use Me:
+HELP_TEXT = """**Hᴏᴡ Tᴏ Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Wᴇʙsɪᴛᴇ:**
 
-Sᴛᴇᴘ Nᴏ 1 : Just Send Me Any File Or Post.
+Sᴛᴇᴘ Nᴏ 1 : Jᴜsᴛ Cᴏᴘʏ Yᴏᴜʀ Aᴄᴄᴏᴜɴᴛ Aᴘɪ Tᴏᴋᴇɴ.
 
-Sᴛᴇᴘ Nᴏ 2 : You will Get the Shareable File Link."""
+Sᴛᴇᴘ Nᴏ 2 : Tʜᴇɴ Cᴏᴍ Aɢᴀɪɴ Hᴇʀᴇ Aɴᴅ Usᴇ /api Tᴏ Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Yᴏᴜʀ Aᴄᴄᴏᴜɴᴛ.
+
+Exᴀᴍᴘʟᴇ : `/api s18ғsjsn737d19f08f382h19d9sd473774hd58` """
+
 
 Bot = Client(
     name=Config.BOT_USERNAME,
@@ -125,8 +135,19 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                    InlineKeyboardButton("😊 About Me", callback_data="ABOUT_BUT"),
-                    InlineKeyboardButton("🔒 Close", callback_data="close"),
+                    InlineKeyboardButton("Cʟɪᴄᴋ Tᴏ Gᴇᴛ Aᴘɪ", url="https://Vnshortener.com/member/tools/api"),
+                ],
+                [
+                    InlineKeyboardButton("Aʟʟ Lɪɴᴋs", url="https://Vnshortener.com/member/links"),
+                    InlineKeyboardButton("Aᴘɪ", url="https://Vnshortener.com/member/tools/api"),
+                    InlineKeyboardButton("PʀᴏFɪʟᴇ", url="https://Vnshortener.com/member/users/profile"),
+                ],
+                [
+                    InlineKeyboardButton("Hᴇʟᴘ", callback_data="HELP_BUT"),
+                    InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="ABOUT_BUT"),
+                ],
+                [
+                    InlineKeyboardButton("Cʟᴏsᴇ", callback_data="close"),
                     ]
                 ]
             )
@@ -155,11 +176,18 @@ async def start(bot: Client, cmd: Message):
             await cmd.reply_text(f"Something went wrong!\n\n**Error:** `{err}`")
 
 
-Bot.on_message((filters.document | filters.video | filters.audio | filters.photo) & ~filters.chat(Config.DB_CHANNEL))
+@Bot.on_message((filters.document | filters.video | filters.audio | filters.photo) & ~filters.chat(Config.DB_CHANNEL))
 async def main(bot: Client, message: Message):
 
     if message.chat.type == enums.ChatType.PRIVATE:
+
+        user = await get_user(message.from_user.id)
+
+        if not user["shortener_api"]:
+            return await message.reply_text(f"Fɪʀsᴛ Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Yᴏᴜʀ Wᴇʙsɪᴛᴇ Aᴘɪ\n\n[Cʟɪᴄᴋ Tᴏ Cᴏɴɴᴇᴄᴛ](https://vnshortener.com/member/tools/api)")
+
         await add_user_to_database(bot, message)
+
         if Config.UPDATES_CHANNEL is not None:
             back = await handle_force_sub(bot, message)
             if back == 400:
@@ -369,8 +397,19 @@ async def start_back(_, query: CallbackQuery):
 
 START_BACK_BUTTON = [
         [
-        InlineKeyboardButton("😊 About Me", callback_data="ABOUT_BUT"),
-        InlineKeyboardButton("🔒 Close", callback_data="close"),
+        InlineKeyboardButton("Cʟɪᴄᴋ Tᴏ Gᴇᴛ Aᴘɪ", url="https://Vnshortener.com/member/tools/api"),
+                ],
+                [
+                    InlineKeyboardButton("Aʟʟ Lɪɴᴋs", url="https://Vnshortener.com/member/links"),
+                    InlineKeyboardButton("Aᴘɪ", url="https://Vnshortener.com/member/tools/api"),
+                    InlineKeyboardButton("PʀᴏFɪʟᴇ", url="https://Vnshortener.com/member/users/profile"),
+                ],
+                [
+            InlineKeyboardButton("Hᴇʟᴘ", callback_data="HELP_BUT"),
+            InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="ABOUT_BUT"),
+        ],
+        [
+            InlineKeyboardButton("Cʟᴏsᴇ", callback_data="close"),
     ],   
 ]
 
@@ -385,6 +424,10 @@ async def help(_, query: CallbackQuery):
 
 HELP_BUTTON = [
         [
+            InlineKeyboardButton("Hᴇʟᴘ 🔘", callback_data="HELP_BUT"),
+            InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="ABOUT_BUT"),
+        ],
+        [
             InlineKeyboardButton("Bᴀᴄᴋ", callback_data="START_BACK"),
     ],   
 ]
@@ -395,6 +438,10 @@ async def about(_, query: CallbackQuery):
        reply_markup=InlineKeyboardMarkup(ABOUT_BUTTON))
 
 ABOUT_BUTTON = [
+        [
+            InlineKeyboardButton("Hᴇʟᴘ", callback_data="HELP_BUT"),
+            InlineKeyboardButton("Aʙᴏᴜᴛ 🔘", callback_data="ABOUT_BUT"),
+        ],
         [
             InlineKeyboardButton("Bᴀᴄᴋ", callback_data="START_BACK"),
     ],   
