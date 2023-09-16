@@ -22,10 +22,10 @@ class Config(object):
 	BASE_SITE = os.environ.get("BASE_SITE", "")
 	DOMAIN = os.environ.get("DOMAIN", "")
 	ABOUT_BOT_TEXT = f"""
-This is Public Files Store Bot With Shortener Support!
+This is Public Files Store Bot !
 Send me any file I will save it in my Database. Also works for channel. Add me to channel as Admin with Edit Permission, I will add Save Uploaded File in Channel & add Sharable Button Link.
 
-🤖 **My Name:** [Shortener File Store](https://t.me/{BOT_USERNAME})
+🤖 **My Name:** [File Store Bot](https://t.me/{BOT_USERNAME})
 
 📝 **Language:** [Python3](https://www.python.org)
 
@@ -35,54 +35,38 @@ Send me any file I will save it in my Database. Also works for channel. Add me t
 
 👑 **Owner:** @Sujan_Ch
 
-🧑🏻‍💻 **Developer:** @Sujan_Ch
-
-👥 **Support Group:** @Sujan_BotZ
-
 📢 **Updates Channel:** @Sujan_BotZ 
 """
 	ABOUT_DEV_TEXT = f"""
 **🌐 This Bot Was Devloped By** : @Sujan_Ch"""
-	SHORTENER_API_MESSAGE = """To add or update your Shortner Website API, `/api api`
-            
-Ex: `/api 6LZq851sXofffPHugiKQq`
-
-Current Website: {base_site}
-
-Current Shortener API: `{shortener_api}`"""
-
+	
 PREFIX = ["/", ".", "?", "#", "@", "₹", "+", ":", "!", "^", "|"]
 START_MEDIA = "https://graph.org/file/a18cf9f447a1c34e5a20a.jpg"
 START_TEXT = """Hɪ/Hᴇʟʟᴏ [{}](tg://user?id={})
 
-I'ᴍ Uʟᴛʀᴀ Fᴀsᴛ Tᴇʟᴇɢʀᴀᴍ Cᴏᴜʟᴅ Sᴛᴏʀᴀɢᴇ Bᴏᴛ  Fᴏʀ [Vnshortener](https://vnshortener.com). Sᴇɴᴅ Mᴇ Aɴʏ Fɪʟᴇs/Lɪɴᴋs Aɴᴅ Sᴇʟᴇᴄᴛ Mᴇᴛʜᴏᴅ Wᴀɪᴛ Fᴇᴡ Sᴇᴄᴏɴᴅs Bᴏᴛ Wɪʟʟ Bᴇ Uᴘʟᴏᴀᴅ Tᴏ Oᴜʀ Sᴇʀᴠᴇʀ Aɴᴅ Gᴇɴᴀʀᴀᴛᴇ  [Vnshortener](http://vnshortener.com) ......
+This is a Permanent FileStore Bot.
 
-Cᴜʀʀᴇɴᴛʟʏ Sᴜᴘᴘᴏʀᴛᴇᴅ Fᴏʀᴍᴀᴛs :
+How to Use Bot & it's Benefits??
 
-• Lɪɴᴋs - Aʟsᴏ Sᴜᴘᴘᴏʀᴛ Bᴜʟᴋ Lɪɴᴋs 
-• Fɪʟᴇs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
-• Vɪᴅᴇᴏs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
-• Aᴜᴅɪᴏs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
-• Pʜᴏᴛᴏs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
+📢 Send me any File & It will be uploaded in My Database & You will Get the File Link.
 
-Mᴏʀᴇ Fᴏʀᴍᴀᴛs Cᴏᴍᴍɪɴɢ Sᴏᴏɴ ......
+⚠️ Benefits: If you have a TeleGram Movie Channel or Any Copyright Channel, Then Its Useful for Daily Usage, You can Send Me Your File & I will Send Permanent Link to You & Channel will be Safe from CopyRight Infringement Issue. I support Channel Also You Can Check About Bot.
+
+❌ PORNOGRAPHY CONTENTS are strictly prohibited & get Permanent Ban.
 
 Pᴏᴡᴇʀᴇᴅ Bʏ : [Sujan_Ch](http://Sujan_BotZ)"""
 
-HELP_TEXT = """Hᴏᴡ Tᴏ Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Wᴇʙsɪᴛᴇ:
+HELP_TEXT = """How To Use Me:
 
-Sᴛᴇᴘ Nᴏ 1 : Jᴜsᴛ Cʟɪᴄᴋ 'Cʟɪᴄᴋ Tᴏ Gᴇᴛ Aᴘɪ' Bᴜᴛᴛᴏɴ Aɴᴅ Cᴏᴘʏ Yᴏᴜʀ [Vnshortener](http://vnshortener.com) Aᴄᴄᴏᴜɴᴛ Aᴘɪ Tᴏᴋᴇɴ.
+Sᴛᴇᴘ Nᴏ 1 : Just Send Me Any File Or Post.
 
-Sᴛᴇᴘ Nᴏ 2 : Tʜᴇɴ Cᴏᴍ Aɢᴀɪɴ Hᴇʀᴇ Aɴᴅ Usᴇ /api Tᴏ Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Yᴏᴜʀ [Vnshortener](http://Vnshortener.com) Aᴄᴄᴏᴜɴᴛ.
+Sᴛᴇᴘ Nᴏ 2 : You will Get the Shareable File Link."""
 
-Exᴀᴍᴘʟᴇ : `/api s18ғsjsn737d19f08f382h19d9sd473774hd58` """
-
-ABOUT_TEXT = """🤖 Name :  Shortener File Store Bot 
+ABOUT_TEXT = """🤖 Name : File Store Bot 
 
 🔠 Language  : Python3
 📚 Library   : Teleton And Pyrogram
 👑 Owner     : @sujan_ch
-🧑🏻‍💻 Developer : @sujan_ch
 
 ©️Powered By @Sujan_BotZ """
 
