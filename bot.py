@@ -114,11 +114,11 @@ async def start(bot: Client, cmd: Message):
     
     try:
         if len(cmd.command) == 2:
-            if "api" in cmd.command[1].strip():
-                user_api = cmd.command[1].strip().replace("api_", "")
-                await update_user_info(user_id, {"shortener_api": user_api})
+            if "verify" in cmd.command[1].strip():
+                user_api = cmd.command[1].strip().replace("verify_", "")
+                await update_user_info(user_id, {"shortener_verify": user_api})
 
-            return await cmd.reply_text(f"You have successfully connected your API\n\nYour Api: {user_api}\n\nStart sending me Files" )
+            return await cmd.reply_text(f"You have successfully verified your token\n\nYour Token: {user_api}\n\nStart sending me Files" )
     except Exception as e:
         print(e)
         
@@ -130,14 +130,6 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                    InlineKeyboardButton("Cʟɪᴄᴋ Tᴏ Gᴇᴛ Aᴘɪ", url="https://Vnshortener.com/member/tools/api"),
-                ],
-                [
-                    InlineKeyboardButton("Aʟʟ Lɪɴᴋs", url="https://Vnshortener.com/member/links"),
-                    InlineKeyboardButton("Aᴘɪ", url="https://Vnshortener.com/member/tools/api"),
-                    InlineKeyboardButton("PʀᴏFɪʟᴇ", url="https://Vnshortener.com/member/users/profile"),
-                ],
-                [
                     InlineKeyboardButton("Hᴇʟᴘ", callback_data="HELP_BUT"),
                     InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="ABOUT_BUT"),
                 ],
@@ -179,7 +171,7 @@ async def main(bot: Client, message: Message):
         user = await get_user(message.from_user.id)
 
         if not user["shortener_api"]:
-            return await message.reply_text(f"Fɪʀsᴛ Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Yᴏᴜʀ Wᴇʙsɪᴛᴇ Aᴘɪ\n\n[Cʟɪᴄᴋ Tᴏ Cᴏɴɴᴇᴄᴛ](https://vnshortener.com/member/tools/api)")
+            return await message.reply_text(f"First You Have To Verify (6c5db31980885e46221e90106f1d47b8295aa0f8) Token\n\n[Just Copy Token☝️](https://t.me/Sujan_BotZ)")
 
         await add_user_to_database(bot, message)
 
@@ -243,7 +235,7 @@ async def main(bot: Client, message: Message):
                 disable_web_page_preview=True
             )
 
-@Bot.on_message(filters.command('api') & filters.private)
+@Bot.on_message(filters.command('verify') & filters.private)
 async def shortener_api_handler(bot, m: Message):
     user_id = m.from_user.id
     user = await get_user(user_id)
@@ -392,14 +384,6 @@ async def start_back(_, query: CallbackQuery):
 
 START_BACK_BUTTON = [
         [
-        InlineKeyboardButton("Cʟɪᴄᴋ Tᴏ Gᴇᴛ Aᴘɪ", url="https://Vnshortener.com/member/tools/api"),
-                ],
-                [
-                    InlineKeyboardButton("Aʟʟ Lɪɴᴋs", url="https://Vnshortener.com/member/links"),
-                    InlineKeyboardButton("Aᴘɪ", url="https://Vnshortener.com/member/tools/api"),
-                    InlineKeyboardButton("PʀᴏFɪʟᴇ", url="https://Vnshortener.com/member/users/profile"),
-                ],
-                [
             InlineKeyboardButton("Hᴇʟᴘ", callback_data="HELP_BUT"),
             InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="ABOUT_BUT"),
         ],
