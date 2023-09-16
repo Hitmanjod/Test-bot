@@ -46,17 +46,15 @@ START_MEDIA = "https://graph.org/file/a18cf9f447a1c34e5a20a.jpg"
 
 START_TEXT = """**Hɪ/Hᴇʟʟᴏ [{}](tg://user?id={})**
 
-I'ᴍ Uʟᴛʀᴀ Fᴀsᴛ Tᴇʟᴇɢʀᴀᴍ Cᴏᴜʟᴅ Sᴛᴏʀᴀɢᴇ Bᴏᴛ. Sᴇɴᴅ Mᴇ Aɴʏ Fɪʟᴇs/Lɪɴᴋs Aɴᴅ Sᴇʟᴇᴄᴛ Mᴇᴛʜᴏᴅ Wᴀɪᴛ Fᴇᴡ Sᴇᴄᴏɴᴅs Bᴏᴛ Wɪʟʟ Bᴇ Uᴘʟᴏᴀᴅ Tᴏ Oᴜʀ Sᴇʀᴠᴇʀ Aɴᴅ Gᴇɴᴀʀᴀᴛᴇ......
+This is a Permanent FileStore Bot.
 
-**Cᴜʀʀᴇɴᴛʟʏ Sᴜᴘᴘᴏʀᴛᴇᴅ Fᴏʀᴍᴀᴛs** :
+How to Use Bot & it's Benefits??
 
-• Lɪɴᴋs - Aʟsᴏ Sᴜᴘᴘᴏʀᴛ Bᴜʟᴋ Lɪɴᴋs 
-• Fɪʟᴇs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
-• Vɪᴅᴇᴏs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
-• Aᴜᴅɪᴏs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
-• Pʜᴏᴛᴏs - Sᴜᴘᴘᴏʀᴛᴇᴅ Uᴘ Tᴏ 4GB
+📢 Send me any File & It will be uploaded in My Database & You will Get the File Link.
 
-Mᴏʀᴇ Fᴏʀᴍᴀᴛs Cᴏᴍᴍɪɴɢ Sᴏᴏɴ ......
+⚠️ Benefits: If you have a TeleGram Movie Channel or Any Copyright Channel, Then Its Useful for Daily Usage, You can Send Me Your File & I will Send Permanent Link to You & Channel will be Safe from CopyRight Infringement Issue. I support Channel Also You Can Check About Bot.
+
+❌ PORNOGRAPHY CONTENTS are strictly prohibited & get Permanent Ban.
 
 Pᴏᴡᴇʀᴇᴅ Bʏ - [Sujan_Ch](https://t.me/Sujan_BotZ)"""
 
@@ -64,17 +62,13 @@ ABOUT_BOT_TEXT = f"""
 This is Permanent File/Links Store Bot!
 Send me any file I will save it in my Database. Also works for channel. Add me to channel as Admin with Edit Permission, I will add Save Uploaded File in Channel & add Sharable Button Link.
 
-🤖 **My Name:** [Shortener File Store](https://t.me/Sujan_BotZ)
+🤖 **My Name:** [File Store Bot](https://t.me/Sujan_BotZ)
 
 📝 **Language:** [Python3](https://www.python.org)
 
 📚 **Library:** [Pyrogram](https://docs.pyrogram.org)
 
 👑 **Owner:** @Sujan_Ch
-
-🧑🏻‍💻 **Developer:** @Sujan_Ch
-
-👥 **Support Group:** @Sujan_BotZ
 
 📢 **Updates Channel:** @Sujan_BotZ 
 """
