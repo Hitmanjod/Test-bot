@@ -1,4 +1,3 @@
-
 # © Telegram @HMF_Owner_1, GitHub @ThiruXD 
 
 import os
@@ -156,18 +155,11 @@ async def start(bot: Client, cmd: Message):
             await cmd.reply_text(f"Something went wrong!\n\n**Error:** `{err}`")
 
 
-@Bot.on_message((filters.document | filters.video | filters.audio | filters.photo) & ~filters.chat(Config.DB_CHANNEL))
+Bot.on_message((filters.document | filters.video | filters.audio | filters.photo) & ~filters.chat(Config.DB_CHANNEL))
 async def main(bot: Client, message: Message):
 
     if message.chat.type == enums.ChatType.PRIVATE:
-
-        user = await get_user(message.from_user.id)
-
-        if not user["shortener_api"]:
-            return await message.reply_text(f"Fɪʀsᴛ Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Yᴏᴜʀ Wᴇʙsɪᴛᴇ Aᴘɪ\n\n[Cʟɪᴄᴋ Tᴏ Cᴏɴɴᴇᴄᴛ](https://vnshortener.com/member/tools/api)")
-
         await add_user_to_database(bot, message)
-
         if Config.UPDATES_CHANNEL is not None:
             back = await handle_force_sub(bot, message)
             if back == 400:
@@ -393,10 +385,6 @@ async def help(_, query: CallbackQuery):
 
 HELP_BUTTON = [
         [
-            InlineKeyboardButton("Hᴇʟᴘ 🔘", callback_data="HELP_BUT"),
-            InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="ABOUT_BUT"),
-        ],
-        [
             InlineKeyboardButton("Bᴀᴄᴋ", callback_data="START_BACK"),
     ],   
 ]
@@ -407,10 +395,6 @@ async def about(_, query: CallbackQuery):
        reply_markup=InlineKeyboardMarkup(ABOUT_BUTTON))
 
 ABOUT_BUTTON = [
-        [
-            InlineKeyboardButton("Hᴇʟᴘ", callback_data="HELP_BUT"),
-            InlineKeyboardButton("😊 About Me", callback_data="ABOUT_BUT"),
-        ],
         [
             InlineKeyboardButton("Bᴀᴄᴋ", callback_data="START_BACK"),
     ],   
