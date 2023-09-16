@@ -73,14 +73,11 @@ Send me any file I will save it in my Database. Also works for channel. Add me t
 📢 **Updates Channel:** @Sujan_BotZ 
 """
 
-HELP_TEXT = """**Hᴏᴡ Tᴏ Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Wᴇʙsɪᴛᴇ:**
+HELP_TEXT = """How To Use Me:
 
-Sᴛᴇᴘ Nᴏ 1 : Jᴜsᴛ Cᴏᴘʏ Yᴏᴜʀ Aᴄᴄᴏᴜɴᴛ Aᴘɪ Tᴏᴋᴇɴ.
+Sᴛᴇᴘ Nᴏ 1 : Just Send Me Any File Or Post.
 
-Sᴛᴇᴘ Nᴏ 2 : Tʜᴇɴ Cᴏᴍ Aɢᴀɪɴ Hᴇʀᴇ Aɴᴅ Usᴇ /api Tᴏ Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Yᴏᴜʀ Aᴄᴄᴏᴜɴᴛ.
-
-Exᴀᴍᴘʟᴇ : `/api s18ғsjsn737d19f08f382h19d9sd473774hd58` """
-
+Sᴛᴇᴘ Nᴏ 2 : You will Get the Shareable File Link."""
 
 Bot = Client(
     name=Config.BOT_USERNAME,
@@ -129,19 +126,8 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                    InlineKeyboardButton("Cʟɪᴄᴋ Tᴏ Gᴇᴛ Aᴘɪ", url="https://Vnshortener.com/member/tools/api"),
-                ],
-                [
-                    InlineKeyboardButton("Aʟʟ Lɪɴᴋs", url="https://Vnshortener.com/member/links"),
-                    InlineKeyboardButton("Aᴘɪ", url="https://Vnshortener.com/member/tools/api"),
-                    InlineKeyboardButton("PʀᴏFɪʟᴇ", url="https://Vnshortener.com/member/users/profile"),
-                ],
-                [
-                    InlineKeyboardButton("Hᴇʟᴘ", callback_data="HELP_BUT"),
-                    InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="ABOUT_BUT"),
-                ],
-                [
-                    InlineKeyboardButton("Cʟᴏsᴇ", callback_data="close"),
+                    InlineKeyboardButton("😊 About Me", callback_data="ABOUT_BUT"),
+                    InlineKeyboardButton("🔒 Close", callback_data="close"),
                     ]
                 ]
             )
@@ -391,19 +377,8 @@ async def start_back(_, query: CallbackQuery):
 
 START_BACK_BUTTON = [
         [
-        InlineKeyboardButton("Cʟɪᴄᴋ Tᴏ Gᴇᴛ Aᴘɪ", url="https://Vnshortener.com/member/tools/api"),
-                ],
-                [
-                    InlineKeyboardButton("Aʟʟ Lɪɴᴋs", url="https://Vnshortener.com/member/links"),
-                    InlineKeyboardButton("Aᴘɪ", url="https://Vnshortener.com/member/tools/api"),
-                    InlineKeyboardButton("PʀᴏFɪʟᴇ", url="https://Vnshortener.com/member/users/profile"),
-                ],
-                [
-            InlineKeyboardButton("Hᴇʟᴘ", callback_data="HELP_BUT"),
-            InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="ABOUT_BUT"),
-        ],
-        [
-            InlineKeyboardButton("Cʟᴏsᴇ", callback_data="close"),
+        InlineKeyboardButton("😊 About Me", callback_data="ABOUT_BUT"),
+        InlineKeyboardButton("🔒 Close", callback_data="close"),
     ],   
 ]
 
@@ -434,7 +409,7 @@ async def about(_, query: CallbackQuery):
 ABOUT_BUTTON = [
         [
             InlineKeyboardButton("Hᴇʟᴘ", callback_data="HELP_BUT"),
-            InlineKeyboardButton("Aʙᴏᴜᴛ 🔘", callback_data="ABOUT_BUT"),
+            InlineKeyboardButton("😊 About Me", callback_data="ABOUT_BUT"),
         ],
         [
             InlineKeyboardButton("Bᴀᴄᴋ", callback_data="START_BACK"),
