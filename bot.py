@@ -171,7 +171,7 @@ async def main(bot: Client, message: Message):
         user = await get_user(message.from_user.id)
 
         if not user["shortener_api"]:
-            return await message.reply_text(f"First You Have To Verify\n\nToken 1: 6c5db31980885e46221e90106f1d47b8295aa0f8\nToken 2: 5e84c540aca6976e2af0180a97b6dd0e03dd7f89\n\n[Just Copy This Token☝️](https://t.me/Sujan_BotZ)")
+            return await message.reply_text(f"First You Have To Verify\n\nToken 1: 6c5db31980885e46221e90106f1d47b8295aa0f8\n\nToken 2: 5e84c540aca6976e2af0180a97b6dd0e03dd7f89\n\n[Just Copy This Token☝️](https://t.me/Sujan_BotZ)")
 
         await add_user_to_database(bot, message)
 
