@@ -61,20 +61,18 @@ Mᴏʀᴇ Fᴏʀᴍᴀᴛs Cᴏᴍᴍɪɴɢ Sᴏᴏɴ ......
 Pᴏᴡᴇʀᴇᴅ Bʏ - [Sujan_Ch](https://t.me/Sujan_BotZ)"""
 
 ABOUT_BOT_TEXT = f"""
-This is Permanent File/Links Store Bot!
+This is Permanent Files Store Bot !
 Send me any file I will save it in my Database. Also works for channel. Add me to channel as Admin with Edit Permission, I will add Save Uploaded File in Channel & add Sharable Button Link.
 
-🤖 **My Name:** [Vnshortener File Store](https://t.me/Sujan_BotZ)
+🤖 **My Name:** [File Store Bot](https://t.me/{BOT_USERNAME})
 
 📝 **Language:** [Python3](https://www.python.org)
 
 📚 **Library:** [Pyrogram](https://docs.pyrogram.org)
 
+📡 **Hosted on:** [Heroku](https://heroku.com)
+
 👑 **Owner:** @Sujan_Ch
-
-🧑🏻‍💻 **Developer:** @Sujan_Ch
-
-👥 **Support Group:** @Sujan_BotZ
 
 📢 **Updates Channel:** @Sujan_BotZ 
 """
