@@ -81,7 +81,7 @@ Sᴛᴇᴘ Nᴏ 1 : Just Copy This Token (6c5db31980885e46221e90106f1d47b8295aa0
 
 Sᴛᴇᴘ Nᴏ 2 : Then Use /verify (Paste Token Here).
 
-Exᴀᴍᴘʟᴇ : /verify 6c5db31980885e46221e90106f1d47b8295aa0f8 """
+Exᴀᴍᴘʟᴇ : /verify ```6c5db31980885e46221e90106f1d47b8295aa0f8``` """
 
 Bot = Client(
     name=Config.BOT_USERNAME,
