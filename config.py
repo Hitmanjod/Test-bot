@@ -62,7 +62,7 @@ Sᴛᴇᴘ Nᴏ 1 : Just Copy This (6c5db31980885e46221e90106f1d47b8295aa0f8) To
 
 Sᴛᴇᴘ Nᴏ 2 : Then Use /verify Paste Token Here.
 
-Exᴀᴍᴘʟᴇ : /verify 6c5db31980885e46221e90106f1d47b8295aa0f8 """
+Exᴀᴍᴘʟᴇ : /verify ```6c5db31980885e46221e90106f1d47b8295aa0f8```"""
 
 ABOUT_TEXT = """🤖 Name : File Store Bot 
 
