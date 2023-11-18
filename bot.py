@@ -44,16 +44,14 @@ MediaList = {}
 START_MEDIA = "https://graph.org/file/6b16ad03f00948d2d719e.jpg"
 
 START_TEXT = """**Hello [{}](tg://user?id={}),**
-**I'm Ultra Fast Telegram File Storage Bot for [Vnshortener.com](https://vnshortener.com).**
+**I'm Ultra Fast Telegram File Storage Bot for [Vnshortener](https://vnshortener.com).**
 
 **Currently Supported Formats:**
 1. Files : Supported upto 4GB.
 2. Videos : Supported upto 4GB.
 
 **(Connect with API👇)**
-**Example :** `/verify 79301ac684f2e3c6392c167ae669bd71b694cbed`
-
-**If You Need Any Support Contact : @Sujan_BotZ 🧑‍💻**"""
+**Example :** `/verify 79301ac684f2e3c6392c167ae669bd71b694cbed`"""
 
 ABOUT_BOT_TEXT = f"""**This is Vnshortener File Store Bot!**
 
