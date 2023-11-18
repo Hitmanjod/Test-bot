@@ -1,3 +1,5 @@
+# © Telegram : @Sujan_BotZ
+
 from pymongo import MongoClient
 from c import *
 
