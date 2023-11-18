@@ -13,7 +13,7 @@ async def handle_user_status(bot, cmd):
         await db.add_user(chat_id)
         await bot.send_message(
             Config.LOG_CHANNEL,
-            f"#NEW_USER: \n\nNew User [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id}) started @KPSFileStoreTest1Bot !!"
+            f"#NEW_USER: \n\nNew User [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id}) started @VnshortenerFileStoreBot !!"
         )
 
     ban_status = await db.get_ban_status(chat_id)
