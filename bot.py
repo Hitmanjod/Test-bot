@@ -39,37 +39,35 @@ from plugins.users_api import get_user, update_user_info
 
 MediaList = {}
 
-START_MEDIA = "https://telegra.ph/file/496e7ae942556eb072ab6.jpg"
+START_MEDIA = "https://graph.org/file/6b16ad03f00948d2d719e.jpg"
 
 START_TEXT = """**Hello [{}](tg://user?id={}),**
-**I'm Ultra Fast Telegram File Storage Bot for [KPS Link](https://kpslink.in).**
+**I'm Ultra Fast Telegram File Storage Bot for [Vnshortener.com](https://vnshortener.com).**
 
 **Currently Supported Formats:**
 1. Files : Supported upto 4GB.
 2. Videos : Supported upto 4GB.
 
 **(Connect with API👇)**
-**Example :** `/api 79301ac684f2e3c6392c167ae669bd71b694cbed`
+**Example :** `/verify 79301ac684f2e3c6392c167ae669bd71b694cbed`
 
-**If You Need Any Support Contact : @KPSLinkBot 🧑‍💻**"""
+**If You Need Any Support Contact : @Sujan_BotZ 🧑‍💻**"""
 
-ABOUT_BOT_TEXT = f"""**This is Permanent File Store Bot!**
+ABOUT_BOT_TEXT = f"""**This is Vnshortener File Store Bot!**
 
 Send me any file I will save it in my Database. Also works for channel. 
 
 Add me to channel as Admin with Edit Permission, I will add Save Uploaded File in Channel & add Sharable Button Link..
 
-**🤖 My Name: [Files Store Bot](https://t.me/{Config.BOT_USERNAME})**
+**🤖 My Name: [Vnshortener Files Store Bot](https://t.me/{Config.BOT_USERNAME})**
 
-**👑 Owner: @KPSLinkBot**
+**👑 Owner: Delete Account**
 
-**📢 Updates Channel: @KPSLink**
-
-**👥 Support Group: @KPSLinkGroup**"""
+**📢 Updates Channel: @Sujan_BotZ**"""
 
 SHORTENER_API_MESSAGE = """**To Add or Update your shortner website API,**
             
-**Example :** `/api 79301ac684f2e3c6392c167ae669bd71b694cbed`
+**Example :** `/verify 6c5db31980885e46221e90106f1d47b8295aa0f8`
 
 **Current Website :** {base_site}
 
@@ -77,14 +75,14 @@ SHORTENER_API_MESSAGE = """**To Add or Update your shortner website API,**
 
 HELP_TEXT = """**How to Connect with Website :**
 
-**Step 1 :** Just click **'Click to Get API'** button and copy your [KPS Link](https://kpslink.in) account API Token.
+**Step 1 :** Just click **'Click to Get API'** button and copy your [Vnshortener.com](https://vnshortener.com) account API Token.
 
-**Step 2 :** Then come again here and use **/api** to connect with your [KPS Link](https://kpslink.in) account.
+**Step 2 :** Then come again here and use **/verify** to connect with your [Vnshortener.com](https://Vnshortener.com) account.
 
-**Example :** `/api 8f17fbb5023fcc76fa7e379e3b9157a84e56e0ba`"""
+**Example :** `/verify 6c5db31980885e46221e90106f1d47b8295aa0f8`"""
 
 ABOUT_DEV_TEXT = f"""
-**🌐 This Bot Was Devloped By** : @KPSLinkBot 🧑‍💻"""
+**🌐 This Bot Was Devloped By** : @Sujan_BotZ 🧑‍💻"""
 
 
 Bot = Client(
@@ -118,8 +116,8 @@ async def start(bot: Client, cmd: Message):
     
     try:
         if len(cmd.command) == 2:
-            if "api" in cmd.command[1].strip():
-                user_api = cmd.command[1].strip().replace("api_", "")
+            if "verify" in cmd.command[1].strip():
+                user_api = cmd.command[1].strip().replace("verify_", "")
                 await update_user_info(user_id, {"shortener_api": user_api})
 
             return await cmd.reply_text(f"**You have successfully connected your API\n\nYour Api: {user_api}\n\nStart sending me Files**" )
@@ -134,12 +132,12 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                    InlineKeyboardButton("Click To Get API", url="https://kpslink.in/member/tools/api"),
+                    InlineKeyboardButton("Click To Get API", url="https://vnshortener.com/member/tools/api"),
                 ],
                 [
-                    InlineKeyboardButton("All Links", url="https://kpslink.in/member/links"),
-                    InlineKeyboardButton("API", url="https://kpslink.in/member/tools/api"),
-                    InlineKeyboardButton("Profile", url="https://kpslink.in/member/users/profile"),
+                    InlineKeyboardButton("All Links", url="https://vnshortener.com/member/links"),
+                    InlineKeyboardButton("API", url="https://vnshortener.com/member/tools/api"),
+                    InlineKeyboardButton("Profile", url="https://vnshortener.com/member/users/profile"),
                 ],
                 [
                     InlineKeyboardButton("Help", callback_data="HELP_BUT"),
@@ -183,7 +181,7 @@ async def main(bot: Client, message: Message):
         user = await get_user(message.from_user.id)
 
         if not user["shortener_api"]:
-            return await message.reply_text(f"**First Connect with Your Website API\n\n[Click to Connect](https://kpslink.in/member/tools/api)**")
+            return await message.reply_text(f"**First Connect with Your Website API\n\n[Click to Connect](https://vnshortener.com/member/tools/api)**")
 
         await add_user_to_database(bot, message)
 
@@ -193,7 +191,7 @@ async def main(bot: Client, message: Message):
                 return
 
         if message.from_user.id in Config.BANNED_USERS:
-            await message.reply_text("**Sorry, You are banned!\n\nContact [Support Group](https://t.me/KPSLinkGroup**)",
+            await message.reply_text("**Sorry, You are banned!\n\nContact [Owner](https://t.me/Sujan_BotZ**)",
                                      disable_web_page_preview=True)
             return
 
@@ -221,7 +219,7 @@ async def main(bot: Client, message: Message):
         try:
             forwarded_msg = await message.forward(Config.DB_CHANNEL)
             file_er_id = str(forwarded_msg.id)
-            share_link = f"https://telegram.me/KPSFileStoreTest1Bot?start=KPSLink_{str_to_b64(file_er_id)}"
+            share_link = f"https://telegram.me/VnshortenerFileStoreBot?start=Vnlinks_{str_to_b64(file_er_id)}"
             CH_edit = await bot.edit_message_reply_markup(message.chat.id, message.id,
                                                           reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
                                                               "Get Sharable Link", url=share_link)]]))
@@ -396,12 +394,12 @@ async def start_back(_, query: CallbackQuery):
 
 START_BACK_BUTTON = [
         [
-            InlineKeyboardButton("Click To Get API", url="https://kpslink.in/member/tools/api"),
+            InlineKeyboardButton("Click To Get API", url="https://vnshortener.com/member/tools/api"),
         ],
         [
-            InlineKeyboardButton("All Links", url="https://kpslink.in/member/links"),
-            InlineKeyboardButton("API", url="https://kpslink.in/member/tools/api"),
-            InlineKeyboardButton("Profile", url="https://kpslink.in/member/users/profile"),
+            InlineKeyboardButton("All Links", url="https://vnshortener.com/member/links"),
+            InlineKeyboardButton("API", url="https://vnshortener.com/member/tools/api"),
+            InlineKeyboardButton("Profile", url="https://vnshortener.com/member/users/profile"),
         ],
         [
             InlineKeyboardButton("Help", callback_data="HELP_BUT"),
@@ -423,9 +421,6 @@ async def help(_, query: CallbackQuery):
 
 HELP_BUTTON = [
         [
-            InlineKeyboardButton("📁 Video Tutorial 📽️", url="https://t.me/KPSLink/13"),
-        ],
-        [
             InlineKeyboardButton("Help 🔘", callback_data="HELP_BUT"),
             InlineKeyboardButton("About", callback_data="ABOUT_BUT"),
         ],
@@ -440,9 +435,6 @@ async def about(_, query: CallbackQuery):
        reply_markup=InlineKeyboardMarkup(ABOUT_BUTTON))
 
 ABOUT_BUTTON = [
-        [
-            InlineKeyboardButton("📁 Video Tutorial 📽️", url="https://t.me/KPSLink/13"),
-        ],
         [
             InlineKeyboardButton("Help", callback_data="HELP_BUT"),
             InlineKeyboardButton("About 🔘", callback_data="ABOUT_BUT"),
@@ -491,13 +483,13 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("⚡ Click to Connect ⚡", url="https://kpslink.in/member/tools/api")
+                        InlineKeyboardButton("⚡ Click to Connect ⚡", url="https://vnshortener.com/member/tools/api")
                     ],
                     [
-                        InlineKeyboardButton("❓ How to Connect ❓", url="https://kpslink.in")
+                        InlineKeyboardButton("❓ How to Connect ❓", url="https://vnshortener.com")
                     ],
                     [
-                        InlineKeyboardButton("⚙️ How to Use ⚙️", url="https://kpslink.in")
+                        InlineKeyboardButton("⚙️ How to Use ⚙️", url="https://vnshortener.com")
                     ],
                     [
                         InlineKeyboardButton("✅ About Bot ✅", callback_data="aboutdevs")
@@ -516,7 +508,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 user = await bot.get_chat_member(channel_chat_id, cmd.message.chat.id)
                 if user.status == "kicked":
                     await cmd.message.edit(
-                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/KPSLinkGroup).",
+                        text="Sorry Sir, You are Banned to use me. Contact my [Owner](https://t.me/Sujan_BotZ).",
                         disable_web_page_preview=True
                     )
                     return
@@ -539,7 +531,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 return
             except Exception:
                 await cmd.message.edit(
-                    text="Something went Wrong. Contact my [Support Group](https://t.me/KPSLinkGroup).",
+                    text="Something went Wrong. Contact my [Owner](https://t.me/Sujan_BotZ).",
                     disable_web_page_preview=True
                 )
                 return
@@ -549,8 +541,7 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/KPSLinkGroup"),
-                        InlineKeyboardButton("Updates Channel", url="https://t.me/KPSLink")
+                        InlineKeyboardButton("Updates Channel", url="https://t.me/Sujan_BotZ")
                     ],
                     [
                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),
