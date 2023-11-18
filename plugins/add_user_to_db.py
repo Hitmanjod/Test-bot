@@ -1,4 +1,4 @@
-# (c) @HMF_Owner_1
+# © Telegram : @Sujan_BotZ
 
 from configs import Config
 from database.database import db
