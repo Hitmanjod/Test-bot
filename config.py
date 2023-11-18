@@ -58,7 +58,7 @@ HELP_TEXT = """Hᴏᴡ Tᴏ Verify:
 
 Sᴛᴇᴘ Nᴏ 1 : Just Copy Your Api Token From Website.
 
-Sᴛᴇᴘ Nᴏ 2 : Then Use /verify Paste Token Here.
+Sᴛᴇᴘ Nᴏ 2 : Then Use /verify Paste Your Api Token Here.
 
 Exᴀᴍᴘʟᴇ : /verify ```6c5db31980885e46221e90106f1d47b8295aa0f8``` """
 
