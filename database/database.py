@@ -2,7 +2,7 @@
 
 import datetime
 import motor.motor_asyncio
-from config import Config
+from configs import Config
 
 
 class Database:
