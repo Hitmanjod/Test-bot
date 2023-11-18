@@ -1,4 +1,4 @@
-# © Telegram @HMF_Owner_1 
+# © Telegram : @Sujan_BotZ 
 
 import asyncio
 from configs import Config
