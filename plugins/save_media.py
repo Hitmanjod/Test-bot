@@ -1,7 +1,7 @@
 # © Telegram @HMF_Owner_1, GitHub @ThiruXD 
 
 import asyncio
-from config import Config
+from configs import Config
 from pyrogram import Client
 from pyrogram.types import (
     Message,
@@ -53,7 +53,7 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
         user_id = cmd.from_user.id
         user = await get_user(user_id)
         
-        share_link = await get_short_link(user, f"https://t.me/{Config.BOT_USERNAME}?start=Jdisk_{str_to_b64(str(SaveMessage.id))}")
+        share_link = await get_short_link(user, f"https://telegram.me/KPSFileStoreTest1Bot?start=KPSLink_{str_to_b64(str(SaveMessage.id))}")
         await editable.edit(
             f"**Your Files Uploaded Successfully ✅\n\n🔗 Your File Link : {share_link} \n\n"
             f"Just Click the link And Click Start get your files!",
@@ -93,7 +93,7 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
         user_id = message.from_user.id
         user = await get_user(user_id)
 
-        share_link = await get_short_link(user, f"https://t.me/{Config.BOT_USERNAME}?start=Jdisk_{str_to_b64(file_er_id)}")
+        share_link = await get_short_link(user, f"https://telegram.me/KPSFileStoreTest1Bot?start=KPSLink_{str_to_b64(file_er_id)}")
         await editable.edit(
             "**Your File Uploaded Successfully ✅**\n\n"
             f"Your File Link\n{share_link} \n\n"

@@ -4,7 +4,7 @@ import asyncio
 from typing import (
     Union
 )
-from config import Config
+from configs import Config
 from pyrogram import Client
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
@@ -32,7 +32,7 @@ async def handle_force_sub(bot: Client, cmd: Message):
         if user.status == "kicked":
             await bot.send_message(
                 chat_id=cmd.from_user.id,
-                text="Sorry Sir, You are Banned to use me. Contact my [Owner](https://t.me/Sujan_Ch).",
+                text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/KPSLinkGroup).",
                 disable_web_page_preview=True
             )
             return 400
@@ -61,7 +61,7 @@ async def handle_force_sub(bot: Client, cmd: Message):
     except Exception:
         await bot.send_message(
             chat_id=cmd.from_user.id,
-            text="If You Have Any Query.Contact my [Owner](https://t.me/Sujan_Ch).",
+            text="Something went Wrong. Contact my [Support Group](https://t.me/KPSLinkGroup).",
             disable_web_page_preview=True
         )
         return 200

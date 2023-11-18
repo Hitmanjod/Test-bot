@@ -1,7 +1,7 @@
 # © Telegram @HMF_Owner_1, GitHub @ThiruXD 
 
 import datetime
-from config import Config
+from configs import Config
 from database.database import Database
 
 db = Database(Config.DATABASE_URL, Config.BOT_USERNAME)
@@ -13,7 +13,7 @@ async def handle_user_status(bot, cmd):
         await db.add_user(chat_id)
         await bot.send_message(
             Config.LOG_CHANNEL,
-            f"#NEW_USER: \n\nNew User [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id}) started @{Config.BOT_USERNAME} !!"
+            f"#NEW_USER: \n\nNew User [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id}) started @KPSFileStoreTest1Bot !!"
         )
 
     ban_status = await db.get_ban_status(chat_id)
