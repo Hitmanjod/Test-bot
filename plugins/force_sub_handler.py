@@ -1,4 +1,4 @@
-# © Telegram @HMF_Owner_1, GitHub @ThiruXD 
+# © Telegram : @Sujan_BotZ 
 
 import asyncio
 from typing import (
