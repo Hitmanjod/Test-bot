@@ -1,1 +1,1 @@
-# File-Shorten-Bot-V2
+# KPS File Store Bot

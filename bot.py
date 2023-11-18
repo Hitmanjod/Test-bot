@@ -1,6 +1,3 @@
-
-# © Telegram @HMF_Owner_1, GitHub @ThiruXD 
-
 import os
 import asyncio
 import traceback
@@ -23,7 +20,7 @@ from pyrogram.types import (
     CallbackQuery,
     Message
 )
-from config import Config
+from configs import Config
 from database.database import db
 from plugins.add_user_to_db import add_user_to_database
 from plugins.send_file import send_media_and_reply
@@ -42,46 +39,53 @@ from plugins.users_api import get_user, update_user_info
 
 MediaList = {}
 
-START_MEDIA = "https://graph.org/file/a18cf9f447a1c34e5a20a.jpg"
+START_MEDIA = "https://telegra.ph/file/496e7ae942556eb072ab6.jpg"
 
-START_TEXT = """**Hɪ/Hᴇʟʟᴏ [{}](tg://user?id={})**
+START_TEXT = """**Hello [{}](tg://user?id={}),**
+**I'm Ultra Fast Telegram File Storage Bot for [KPS Link](https://kpslink.in).**
 
-This is a Permanent FileStore Bot.
+**Currently Supported Formats:**
+1. Files : Supported upto 4GB.
+2. Videos : Supported upto 4GB.
 
-How to Use Bot & it's Benefits??
+**(Connect with API👇)**
+**Example :** `/api 79301ac684f2e3c6392c167ae669bd71b694cbed`
 
-📢 Send me any File & It will be uploaded in My Database & You will Get the File Link.
+**If You Need Any Support Contact : @KPSLinkBot 🧑‍💻**"""
 
-⚠️ Benefits: If you have a TeleGram Movie Channel or Any Copyright Channel, Then Its Useful for Daily Usage, You can Send Me Your File & I will Send Permanent Link to You & Channel will be Safe from CopyRight Infringement Issue. I support Channel Also You Can Check About Bot.
+ABOUT_BOT_TEXT = f"""**This is Permanent File Store Bot!**
 
-❌ PORNOGRAPHY CONTENTS are strictly prohibited & get Permanent Ban.
+Send me any file I will save it in my Database. Also works for channel. 
 
-Pᴏᴡᴇʀᴇᴅ Bʏ - [Sujan_Ch](https://t.me/Sujan_BotZ)"""
+Add me to channel as Admin with Edit Permission, I will add Save Uploaded File in Channel & add Sharable Button Link..
 
-ABOUT_BOT_TEXT = f"""
-This is Permanent Files Store Bot !
-Send me any file I will save it in my Database. Also works for channel. Add me to channel as Admin with Edit Permission, I will add Save Uploaded File in Channel & add Sharable Button Link.
+**🤖 My Name: [Files Store Bot](https://t.me/{Config.BOT_USERNAME})**
 
-🤖 **My Name:** [File Store Bot](https://t.me/TG_File_Store_Ro_Bot)
+**👑 Owner: @KPSLinkBot**
 
-📝 **Language:** [Python3](https://www.python.org)
+**📢 Updates Channel: @KPSLink**
 
-📚 **Library:** [Pyrogram](https://docs.pyrogram.org)
+**👥 Support Group: @KPSLinkGroup**"""
 
-📡 **Hosted on:** [Heroku](https://heroku.com)
+SHORTENER_API_MESSAGE = """**To Add or Update your shortner website API,**
+            
+**Example :** `/api 79301ac684f2e3c6392c167ae669bd71b694cbed`
 
-👑 **Owner:** @Sujan_Ch
+**Current Website :** {base_site}
 
-📢 **Updates Channel:** @Sujan_BotZ 
-"""
+**Current Shortener API :** `{shortener_api}`"""
 
-HELP_TEXT = """Hᴏᴡ Tᴏ Verify:
+HELP_TEXT = """**How to Connect with Website :**
 
-Sᴛᴇᴘ Nᴏ 1 : Just Copy This Token (6c5db31980885e46221e90106f1d47b8295aa0f8).
+**Step 1 :** Just click **'Click to Get API'** button and copy your [KPS Link](https://kpslink.in) account API Token.
 
-Sᴛᴇᴘ Nᴏ 2 : Then Use /verify (Paste Token Here).
+**Step 2 :** Then come again here and use **/api** to connect with your [KPS Link](https://kpslink.in) account.
 
-Exᴀᴍᴘʟᴇ : /verify ```6c5db31980885e46221e90106f1d47b8295aa0f8``` """
+**Example :** `/api 8f17fbb5023fcc76fa7e379e3b9157a84e56e0ba`"""
+
+ABOUT_DEV_TEXT = f"""
+**🌐 This Bot Was Devloped By** : @KPSLinkBot 🧑‍💻"""
+
 
 Bot = Client(
     name=Config.BOT_USERNAME,
@@ -102,7 +106,7 @@ async def start(bot: Client, cmd: Message):
 
 
     if cmd.from_user.id in Config.BANNED_USERS:
-        await cmd.reply_text("Sorry, You are banned.")
+        await cmd.reply_text("**Sorry, You are banned.**")
         return
     if Config.UPDATES_CHANNEL is not None:
         back = await handle_force_sub(bot, cmd)
@@ -114,11 +118,11 @@ async def start(bot: Client, cmd: Message):
     
     try:
         if len(cmd.command) == 2:
-            if "verify" in cmd.command[1].strip():
-                user_api = cmd.command[1].strip().replace("verify_", "")
-                await update_user_info(user_id, {"shortener_verify": user_api})
+            if "api" in cmd.command[1].strip():
+                user_api = cmd.command[1].strip().replace("api_", "")
+                await update_user_info(user_id, {"shortener_api": user_api})
 
-            return await cmd.reply_text(f"Your Token successfully verified\n\nYour Token: {user_api}\n\nStart sending me Files" )
+            return await cmd.reply_text(f"**You have successfully connected your API\n\nYour Api: {user_api}\n\nStart sending me Files**" )
     except Exception as e:
         print(e)
         
@@ -130,11 +134,19 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                    InlineKeyboardButton("Hᴇʟᴘ", callback_data="HELP_BUT"),
-                    InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="ABOUT_BUT"),
+                    InlineKeyboardButton("Click To Get API", url="https://kpslink.in/member/tools/api"),
                 ],
                 [
-                    InlineKeyboardButton("Cʟᴏsᴇ", callback_data="close"),
+                    InlineKeyboardButton("All Links", url="https://kpslink.in/member/links"),
+                    InlineKeyboardButton("API", url="https://kpslink.in/member/tools/api"),
+                    InlineKeyboardButton("Profile", url="https://kpslink.in/member/users/profile"),
+                ],
+                [
+                    InlineKeyboardButton("Help", callback_data="HELP_BUT"),
+                    InlineKeyboardButton("About", callback_data="ABOUT_BUT"),
+                ],
+                [
+                    InlineKeyboardButton("Close", callback_data="close"),
                     ]
                 ]
             )
@@ -151,7 +163,7 @@ async def start(bot: Client, cmd: Message):
             if GetMessage.text:
                 message_ids = GetMessage.text.split(" ")
                 _response_msg = await cmd.reply_text(
-                    text=f"**Total Files:** `{len(message_ids)}`",
+                    text=f"**Total Files: `{len(message_ids)}`**",
                     quote=True,
                     disable_web_page_preview=True
                 )
@@ -160,7 +172,7 @@ async def start(bot: Client, cmd: Message):
             for i in range(len(message_ids)):
                 await send_media_and_reply(bot, user_id=cmd.from_user.id, file_id=int(message_ids[i]))
         except Exception as err:
-            await cmd.reply_text(f"Something went wrong!\n\n**Error:** `{err}`")
+            await cmd.reply_text(f"**Something went wrong!\n\nError: `{err}`**")
 
 
 @Bot.on_message((filters.document | filters.video | filters.audio | filters.photo) & ~filters.chat(Config.DB_CHANNEL))
@@ -171,7 +183,7 @@ async def main(bot: Client, message: Message):
         user = await get_user(message.from_user.id)
 
         if not user["shortener_api"]:
-            return await message.reply_text(f"First You Have To Verify\n\nToken 1: ```6c5db31980885e46221e90106f1d47b8295aa0f8\n\nToken``` 2: ```5e84c540aca6976e2af0180a97b6dd0e03dd7f89```\n\n[Just Copy This Token☝️](https://t.me/Sujan_BotZ)")
+            return await message.reply_text(f"**First Connect with Your Website API\n\n[Click to Connect](https://kpslink.in/member/tools/api)**")
 
         await add_user_to_database(bot, message)
 
@@ -181,7 +193,7 @@ async def main(bot: Client, message: Message):
                 return
 
         if message.from_user.id in Config.BANNED_USERS:
-            await message.reply_text("Sorry, You are banned!\n\nContact [Owner](https://t.me/Sujan_Ch)",
+            await message.reply_text("**Sorry, You are banned!\n\nContact [Support Group](https://t.me/KPSLinkGroup**)",
                                      disable_web_page_preview=True)
             return
 
@@ -209,46 +221,46 @@ async def main(bot: Client, message: Message):
         try:
             forwarded_msg = await message.forward(Config.DB_CHANNEL)
             file_er_id = str(forwarded_msg.id)
-            share_link = f"https://t.me/{Config.BOT_USERNAME}?start=AbirHasan2005_{str_to_b64(file_er_id)}"
+            share_link = f"https://telegram.me/KPSFileStoreTest1Bot?start=KPSLink_{str_to_b64(file_er_id)}"
             CH_edit = await bot.edit_message_reply_markup(message.chat.id, message.id,
                                                           reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(
                                                               "Get Sharable Link", url=share_link)]]))
             if message.chat.username:
                 await forwarded_msg.reply_text(
-                    f"#CHANNEL_BUTTON:\n\n[{message.chat.title}](https://t.me/{message.chat.username}/{CH_edit.id}) Channel's Broadcasted File's Button Added!")
+                    f"**#CHANNEL_BUTTON:\n\n[{message.chat.title}](https://t.me/{message.chat.username}/{CH_edit.id}) Channel's Broadcasted File's Button Added!**")
             else:
                 private_ch = str(message.chat.id)[4:]
                 await forwarded_msg.reply_text(
-                    f"#CHANNEL_BUTTON:\n\n[{message.chat.title}](https://t.me/c/{private_ch}/{CH_edit.id}) Channel's Broadcasted File's Button Added!")
+                    f"**#CHANNEL_BUTTON:\n\n[{message.chat.title}](https://t.me/c/{private_ch}/{CH_edit.id}) Channel's Broadcasted File's Button Added!**")
         except FloodWait as sl:
             await asyncio.sleep(sl.value)
             await bot.send_message(
                 chat_id=int(Config.LOG_CHANNEL),
-                text=f"#FloodWait:\nGot FloodWait of `{str(sl.value)}s` from `{str(message.chat.id)}` !!",
+                text=f"**#FloodWait:\nGot FloodWait of `{str(sl.value)}s` from `{str(message.chat.id)}` !!**",
                 disable_web_page_preview=True
             )
         except Exception as err:
             await bot.leave_chat(message.chat.id)
             await bot.send_message(
                 chat_id=int(Config.LOG_CHANNEL),
-                text=f"#ERROR_TRACEBACK:\nGot Error from `{str(message.chat.id)}` !!\n\n**Traceback:** `{err}`",
+                text=f"**#ERROR_TRACEBACK:\nGot Error from `{str(message.chat.id)}` !!\n\nTraceback: `{err}`**",
                 disable_web_page_preview=True
             )
 
-@Bot.on_message(filters.command('verify') & filters.private)
+@Bot.on_message(filters.command('api') & filters.private)
 async def shortener_api_handler(bot, m: Message):
     user_id = m.from_user.id
     user = await get_user(user_id)
     cmd = m.command
 
     if len(cmd) == 1:
-        s = Config.SHORTENER_API_MESSAGE.format(base_site=Config.BASE_SITE, shortener_api=user["shortener_api"])
+        s = SHORTENER_API_MESSAGE.format(base_site=Config.BASE_SITE, shortener_api=user["shortener_api"])
         return await m.reply(s)
 
     elif len(cmd) == 2:    
         api = cmd[1].strip()
         await update_user_info(user_id, {"shortener_api": api})
-        await m.reply("Your Token Updated successfully To " + api)
+        await m.reply("Shortener API updated successfully to " + api)
         
 @Bot.on_message(filters.private & filters.command("broadcast") & filters.user(Config.BOT_OWNER) & filters.reply)
 async def broadcast_handler_open(_, m: Message):
@@ -259,7 +271,7 @@ async def broadcast_handler_open(_, m: Message):
 async def sts(_, m: Message):
     total_users = await db.total_users_count()
     await m.reply_text(
-        text=f"**Total Users in DB:** `{total_users}`",
+        text=f"**Total Users in DB: `{total_users}`**",
         quote=True
     )
 
@@ -286,8 +298,8 @@ async def ban(c: Client, m: Message):
         try:
             await c.send_message(
                 user_id,
-                f"You are banned to use this bot for **{ban_duration}** day(s) for the reason __{ban_reason}__ \n\n"
-                f"**Message from the admin**"
+                f"You are banned to use this bot for {ban_duration} day(s) for the reason __{ban_reason}__ \n\n"
+                f"Message from the admin"
             )
             ban_log_text += '\n\nUser notified successfully!'
         except:
@@ -360,8 +372,8 @@ async def _banned_users(_, m: Message):
         banned_on = banned_user['ban_status']['banned_on']
         ban_reason = banned_user['ban_status']['ban_reason']
         banned_usr_count += 1
-        text += f"> **user_id**: `{user_id}`, **Ban Duration**: `{ban_duration}`, " \
-                f"**Banned on**: `{banned_on}`, **Reason**: `{ban_reason}`\n\n"
+        text += f"> user_id: `{user_id}`, Ban Duration: `{ban_duration}`, " \
+                f"Banned on: `{banned_on}`, Reason: `{ban_reason}`\n\n"
     reply_text = f"Total banned user(s): `{banned_usr_count}`\n\n{text}"
     if len(reply_text) > 4096:
         with open('banned-users.txt', 'w') as f:
@@ -384,11 +396,19 @@ async def start_back(_, query: CallbackQuery):
 
 START_BACK_BUTTON = [
         [
-            InlineKeyboardButton("Hᴇʟᴘ", callback_data="HELP_BUT"),
-            InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="ABOUT_BUT"),
+            InlineKeyboardButton("Click To Get API", url="https://kpslink.in/member/tools/api"),
         ],
         [
-            InlineKeyboardButton("Cʟᴏsᴇ", callback_data="close"),
+            InlineKeyboardButton("All Links", url="https://kpslink.in/member/links"),
+            InlineKeyboardButton("API", url="https://kpslink.in/member/tools/api"),
+            InlineKeyboardButton("Profile", url="https://kpslink.in/member/users/profile"),
+        ],
+        [
+            InlineKeyboardButton("Help", callback_data="HELP_BUT"),
+            InlineKeyboardButton("About", callback_data="ABOUT_BUT"),
+        ],
+        [
+            InlineKeyboardButton("Close", callback_data="close"),
     ],   
 ]
 
@@ -403,11 +423,14 @@ async def help(_, query: CallbackQuery):
 
 HELP_BUTTON = [
         [
-            InlineKeyboardButton("Hᴇʟᴘ 🔘", callback_data="HELP_BUT"),
-            InlineKeyboardButton("Aʙᴏᴜᴛ", callback_data="ABOUT_BUT"),
+            InlineKeyboardButton("📁 Video Tutorial 📽️", url="https://t.me/KPSLink/13"),
         ],
         [
-            InlineKeyboardButton("Bᴀᴄᴋ", callback_data="START_BACK"),
+            InlineKeyboardButton("Help 🔘", callback_data="HELP_BUT"),
+            InlineKeyboardButton("About", callback_data="ABOUT_BUT"),
+        ],
+        [
+            InlineKeyboardButton("Back", callback_data="START_BACK"),
     ],   
 ]
 
@@ -418,11 +441,14 @@ async def about(_, query: CallbackQuery):
 
 ABOUT_BUTTON = [
         [
-            InlineKeyboardButton("Hᴇʟᴘ", callback_data="HELP_BUT"),
-            InlineKeyboardButton("Aʙᴏᴜᴛ 🔘", callback_data="ABOUT_BUT"),
+            InlineKeyboardButton("📁 Video Tutorial 📽️", url="https://t.me/KPSLink/13"),
         ],
         [
-            InlineKeyboardButton("Bᴀᴄᴋ", callback_data="START_BACK"),
+            InlineKeyboardButton("Help", callback_data="HELP_BUT"),
+            InlineKeyboardButton("About 🔘", callback_data="ABOUT_BUT"),
+        ],
+        [
+            InlineKeyboardButton("Back", callback_data="START_BACK"),
     ],   
 ]
 
@@ -434,12 +460,12 @@ async def button(bot: Client, cmd: CallbackQuery):
     cb_data = cmd.data
     if "aboutbot" in cb_data:
         await cmd.message.edit(
-            Config.ABOUT_BOT_TEXT,
+            ABOUT_BOT_TEXT,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Go Home", callback_data="gotohome")
+                        InlineKeyboardButton("Go to Home", callback_data="gotohome")
                     ]
                 ]
             )
@@ -447,12 +473,12 @@ async def button(bot: Client, cmd: CallbackQuery):
 
     elif "aboutdevs" in cb_data:
         await cmd.message.edit(
-            Config.ABOUT_DEV_TEXT,
+            ABOUT_DEV_TEXT,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("GO TO HOME", callback_data="gotohome")
+                        InlineKeyboardButton("Go to Home", callback_data="gotohome")
                     ]
                 ]
             )
@@ -460,18 +486,21 @@ async def button(bot: Client, cmd: CallbackQuery):
 
     elif "gotohome" in cb_data:
         await cmd.message.edit(
-            Config.HOME_TEXT.format(cmd.message.chat.first_name, cmd.message.chat.id),
+            START_TEXT.format(cmd.message.chat.first_name, cmd.message.chat.id),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("❓ Owner ❓", url="https://t.me/Sujan_Ch")
+                        InlineKeyboardButton("⚡ Click to Connect ⚡", url="https://kpslink.in/member/tools/api")
                     ],
                     [
-                        InlineKeyboardButton("⚙️ Bot Channel ⚙️", url="https://t.me/Sujan_BotZ")
+                        InlineKeyboardButton("❓ How to Connect ❓", url="https://kpslink.in")
                     ],
                     [
-                        InlineKeyboardButton("✅ 𝖠𝖡𝖮𝖴𝖳 𝖡𝖮𝖳 ✅", callback_data="aboutdevs")
+                        InlineKeyboardButton("⚙️ How to Use ⚙️", url="https://kpslink.in")
+                    ],
+                    [
+                        InlineKeyboardButton("✅ About Bot ✅", callback_data="aboutdevs")
                     ]
                 ]
             )
@@ -487,14 +516,14 @@ async def button(bot: Client, cmd: CallbackQuery):
                 user = await bot.get_chat_member(channel_chat_id, cmd.message.chat.id)
                 if user.status == "kicked":
                     await cmd.message.edit(
-                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/HangOverXD).",
+                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/KPSLinkGroup).",
                         disable_web_page_preview=True
                     )
                     return
             except UserNotParticipant:
                 invite_link = await get_invite_link(channel_chat_id)
                 await cmd.message.edit(
-                    text="**You Still Didn't Join ☹️, Please Join My Updates Channel to use this Bot!**\n\n"
+                    text="You Still Didn't Join ☹️, Please Join My Updates Channel to use this Bot!\n\n"
                          "Due to Overload, Only Channel Subscribers can use the Bot!",
                     reply_markup=InlineKeyboardMarkup(
                         [
@@ -510,18 +539,18 @@ async def button(bot: Client, cmd: CallbackQuery):
                 return
             except Exception:
                 await cmd.message.edit(
-                    text="Something went Wrong. Contact my [Owner](https://t.me/Sujan_Ch).",
+                    text="Something went Wrong. Contact my [Support Group](https://t.me/KPSLinkGroup).",
                     disable_web_page_preview=True
                 )
                 return
         await cmd.message.edit(
-            text=Config.HOME_TEXT.format(cmd.message.chat.first_name, cmd.message.chat.id),
+            text=START_TEXT.format(cmd.message.chat.first_name, cmd.message.chat.id),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Owner Dm", url="https://t.me/Sujan_Ch"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/Sujan_BotZ")
+                        InlineKeyboardButton("Support Group", url="https://t.me/KPSLinkGroup"),
+                        InlineKeyboardButton("Updates Channel", url="https://t.me/KPSLink")
                     ],
                     [
                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),
@@ -565,7 +594,7 @@ async def button(bot: Client, cmd: CallbackQuery):
         if message_ids is None:
             await cmd.answer("Batch List Empty!", show_alert=True)
             return
-        await cmd.message.edit("Please wait....\n\n Your Files Downloding 📥")
+        await cmd.message.edit("**Please wait....\n\n Your Files Downloding 📥**")
         await save_batch_media_in_channel(bot=bot, editable=cmd.message, message_ids=message_ids, cmd=cmd)
         MediaList[f"{str(cmd.from_user.id)}"] = []
 
