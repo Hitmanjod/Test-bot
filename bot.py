@@ -1,3 +1,5 @@
+# © Telegram : @Sujan_BotZ
+
 import os
 import asyncio
 import traceback
