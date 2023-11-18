@@ -51,7 +51,7 @@ START_TEXT = """**Hello [{}](tg://user?id={}),**
 2. Videos : Supported upto 4GB.
 
 **(Connect with API👇)**
-**Example :** `/verify 79301ac684f2e3c6392c167ae669bd71b694cbed`"""
+**Example :** `/api 6c5db31980885e46221e90106f1d47b8295aa0f8`"""
 
 ABOUT_BOT_TEXT = f"""**This is Vnshortener File Store Bot!**
 
@@ -67,7 +67,7 @@ Add me to channel as Admin with Edit Permission, I will add Save Uploaded File i
 
 SHORTENER_API_MESSAGE = """**To Add or Update your shortner website API,**
             
-**Example :** `/verify 6c5db31980885e46221e90106f1d47b8295aa0f8`
+**Example :** `/api 6c5db31980885e46221e90106f1d47b8295aa0f8`
 
 **Current Website :** {base_site}
 
@@ -79,7 +79,7 @@ HELP_TEXT = """**How to Connect with Website :**
 
 **Step 2 :** Then come again here and use **/verify** to connect with your [Vnshortener.com](https://Vnshortener.com) account.
 
-**Example :** `/verify 6c5db31980885e46221e90106f1d47b8295aa0f8`"""
+**Example :** `/api 6c5db31980885e46221e90106f1d47b8295aa0f8`"""
 
 ABOUT_DEV_TEXT = f"""
 **🌐 This Bot Was Devloped By** : @Sujan_BotZ 🧑‍💻"""
@@ -116,8 +116,8 @@ async def start(bot: Client, cmd: Message):
     
     try:
         if len(cmd.command) == 2:
-            if "verify" in cmd.command[1].strip():
-                user_api = cmd.command[1].strip().replace("verify_", "")
+            if "api" in cmd.command[1].strip():
+                user_api = cmd.command[1].strip().replace("api_", "")
                 await update_user_info(user_id, {"shortener_api": user_api})
 
             return await cmd.reply_text(f"**You have successfully connected your API\n\nYour Api: {user_api}\n\nStart sending me Files**" )
