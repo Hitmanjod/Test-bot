@@ -95,9 +95,9 @@ async def start(bot: Client, cmd: Message):
     
     try:
         if len(cmd.command) == 2:
-            if "api" in cmd.command[1].strip():
-                user_api = cmd.command[1].strip().replace("api_", "")
-                await update_user_info(user_id, {"shortener_api": user_api})
+            if "connect" in cmd.command[1].strip():
+                user_api = cmd.command[1].strip().replace("connect_", "")
+                await update_user_info(user_id, {"shortener_connect": user_connect})
 
             return await cmd.reply_text(f"**You have successfully connected your API\n\nYour Api: {user_api}\n\nStart sending me Files**" )
     except Exception as e:
