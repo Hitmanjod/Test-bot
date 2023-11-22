@@ -5,8 +5,8 @@ import time
 class Config(object):
 	API_ID = int(os.environ.get("API_ID", "25502576"))
 	API_HASH = os.environ.get("API_HASH", "f0f35dbb5b0081cdc8d3c9d5383c4628")
-	BOT_TOKEN = os.environ.get("BOT_TOKEN", "6369183180:AAE8nXrcaNI-ZPMtdn4AxI6Uf99wZ-6BWt0")
-	BOT_USERNAME = os.environ.get("BOT_USERNAME", "VnshortenerFileStoreBot")
+	BOT_TOKEN = os.environ.get("BOT_TOKEN", "6408658466:AAHzFC0Qf6OiYh6di8HZn1FV2zO3bJa5eHE")
+	BOT_USERNAME = os.environ.get("BOT_USERNAME", "StudyXmaterialbot")
 	DB_CHANNEL = int(os.environ.get("DB_CHANNEL", "-1001948924720"))
 	BOT_OWNER = int(os.environ.get("BOT_OWNER", "5123039648"))
 	DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://HitmanLaude12:HitmanLaude12@cluster0.logbo9e.mongodb.net/?retryWrites=true&w=majority")
@@ -23,7 +23,7 @@ class Config(object):
 This is Public Files Store Bot !
 Send me any file I will save it in my Database. Also works for channel. Add me to channel as Admin with Edit Permission, I will add Save Uploaded File in Channel & add Sharable Button Link.
 
-🤖 **My Name:** [Vn File Store Bot](https://t.me/VnshortenerFileStoreBot)
+🤖 **My Name:** [Private File Store Bot](https://t.me/StudyXmaterialbot)
 
 📝 **Language:** [Python3](https://www.python.org)
 
@@ -39,10 +39,10 @@ Send me any file I will save it in my Database. Also works for channel. Add me t
 **🌐 This Bot Was Devloped By** : @Sujan_BotZ"""
 	
 PREFIX = ["/", ".", "?", "#", "@", "₹", "+", ":", "!", "^", "|"]
-START_MEDIA = "https://graph.org/file/6b16ad03f00948d2d719e.jpg"
+START_MEDIA = "https://telegra.ph/file/fd8bf309ff3cee9db7206.jpg"
 START_TEXT = """Hɪ/Hᴇʟʟᴏ [{}](tg://user?id={})
 
-This is a Vnshortener FileStore Bot.
+This is a Private FileStore Bot.
 
 How to Use Bot & it's Benefits??
 
@@ -54,15 +54,7 @@ How to Use Bot & it's Benefits??
 
 Pᴏᴡᴇʀᴇᴅ Bʏ : [Sujan_BotZ](http://Sujan_BotZ)"""
 
-HELP_TEXT = """Hᴏᴡ Tᴏ Verify:
-
-Sᴛᴇᴘ Nᴏ 1 : Just Copy Your Api Token From Website.
-
-Sᴛᴇᴘ Nᴏ 2 : Then Use /api Paste Your Api Token Here.
-
-Exᴀᴍᴘʟᴇ : /api ```6c5db31980885e46221e90106f1d47b8295aa0f8``` """
-
-ABOUT_TEXT = """🤖 Name : Vnshortener File Store Bot 
+ABOUT_TEXT = """🤖 Name : Private File Store Bot 
 
 🔠 Language  : Python3
 📚 Library   : Teleton And Pyrogram
