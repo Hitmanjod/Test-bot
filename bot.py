@@ -95,9 +95,9 @@ async def start(bot: Client, cmd: Message):
     
     try:
         if len(cmd.command) == 2:
-            if "connect" in cmd.command[1].strip():
-                user_api = cmd.command[1].strip().replace("connect_", "")
-                await update_user_info(user_id, {"shortener_connect": user_connect})
+            if "api" in cmd.command[1].strip():
+                user_api = cmd.command[1].strip().replace("api_", "")
+                await update_user_info(user_id, {"shortener_api": user_api})
 
             return await cmd.reply_text(f"**You have successfully connected your API\n\nYour Api: {user_api}\n\nStart sending me Files**" )
     except Exception as e:
@@ -227,8 +227,8 @@ async def shortener_api_handler(bot, m: Message):
         return await m.reply(s)
 
     elif len(cmd) == 2:    
-        connect = cmd[1].strip()
-        await update_user_info(user_id, {"shortener_connect": connect})
+        api = cmd[1].strip()
+        await update_user_info(user_id, {"shortener_api": api})
         await m.reply("Shortener API updated successfully to " + api)
         
 @Bot.on_message(filters.private & filters.command("broadcast") & filters.user(Config.BOT_OWNER) & filters.reply)
