@@ -216,7 +216,7 @@ async def main(bot: Client, message: Message):
                 disable_web_page_preview=True
             )
 
-@Bot.on_message(filters.command('api') & filters.private)
+@Bot.on_message(filters.command('connect') & filters.private)
 async def shortener_api_handler(bot, m: Message):
     user_id = m.from_user.id
     user = await get_user(user_id)
@@ -227,8 +227,8 @@ async def shortener_api_handler(bot, m: Message):
         return await m.reply(s)
 
     elif len(cmd) == 2:    
-        api = cmd[1].strip()
-        await update_user_info(user_id, {"shortener_api": api})
+        connect = cmd[1].strip()
+        await update_user_info(user_id, {"shortener_connect": connect})
         await m.reply("Shortener API updated successfully to " + api)
         
 @Bot.on_message(filters.private & filters.command("broadcast") & filters.user(Config.BOT_OWNER) & filters.reply)
