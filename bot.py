@@ -41,45 +41,24 @@ from plugins.users_api import get_user, update_user_info
 
 MediaList = {}
 
-START_MEDIA = "https://graph.org/file/6b16ad03f00948d2d719e.jpg"
+START_MEDIA = "https://telegra.ph/file/fd8bf309ff3cee9db7206.jpg"
 
 START_TEXT = """**Hello [{}](tg://user?id={}),**
-**I'm Vnshortener File Store Bot.**
+**I'm Private File Store Bot.**
 
-**Currently Supported Formats:**
+**I Can Support These:**
 1. Files : Supported upto 4GB.
-2. Videos : Supported upto 4GB.
+2. Videos : Supported upto 4GB."""
 
-**(Connect with API👇)**
-**Example :** `/api 6c5db31980885e46221e90106f1d47b8295aa0f8`"""
+ABOUT_BOT_TEXT = f"""**This is Private File Store Bot!**
 
-ABOUT_BOT_TEXT = f"""**This is Vnshortener File Store Bot!**
+Send me any file I will save it in my Database..
 
-Send me any file I will save it in my Database. Also works for channel. 
-
-Add me to channel as Admin with Edit Permission, I will add Save Uploaded File in Channel & add Sharable Button Link..
-
-**🤖 My Name: [Vnshortener Files Store Bot](https://t.me/{Config.BOT_USERNAME})**
+**🤖 My Name: [Files Store Bot](https://t.me/{Config.BOT_USERNAME})**
 
 **👑 Owner: Delete Account**
 
 **📢 Updates Channel: @Sujan_BotZ**"""
-
-SHORTENER_API_MESSAGE = """**To Add or Update your shortner website API,**
-            
-**Example :** `/api 6c5db31980885e46221e90106f1d47b8295aa0f8`
-
-**Current Website :** {base_site}
-
-**Current Shortener API :** `{shortener_api}`"""
-
-HELP_TEXT = """**How to Connect with Website :**
-
-**Step 1 :** Just click **'Click to Get API'** button and copy your [Vnshortener.com](https://vnshortener.com) account API Token.
-
-**Step 2 :** Then come again here and use **/verify** to connect with your [Vnshortener.com](https://Vnshortener.com) account.
-
-**Example :** `/api 6c5db31980885e46221e90106f1d47b8295aa0f8`"""
 
 ABOUT_DEV_TEXT = f"""
 **🌐 This Bot Was Devloped By** : @Sujan_BotZ 🧑‍💻"""
@@ -132,19 +111,11 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                    InlineKeyboardButton("Click To Get API", url="https://vnshortener.com/member/tools/api"),
+                    InlineKeyboardButton("📯 Bot Channel 📯", url="https://t.me/Sujan_BotZ"),
                 ],
                 [
-                    InlineKeyboardButton("All Links", url="https://vnshortener.com/member/links"),
-                    InlineKeyboardButton("API", url="https://vnshortener.com/member/tools/api"),
-                    InlineKeyboardButton("Profile", url="https://vnshortener.com/member/users/profile"),
-                ],
-                [
-                    InlineKeyboardButton("Help", callback_data="HELP_BUT"),
-                    InlineKeyboardButton("About", callback_data="ABOUT_BUT"),
-                ],
-                [
-                    InlineKeyboardButton("Close", callback_data="close"),
+                    InlineKeyboardButton("📣 Owner 📣", url="https://t.me/Sujan_Ch"),
+                    InlineKeyboardButton("🔒 Close 🔒", callback_data="close"),
                     ]
                 ]
             )
@@ -181,7 +152,7 @@ async def main(bot: Client, message: Message):
         user = await get_user(message.from_user.id)
 
         if not user["shortener_api"]:
-            return await message.reply_text(f"**First Connect with Your Website API\n\n[Click to Connect](https://vnshortener.com/member/tools/api)**")
+            return await message.reply_text(f"**Sorry This Bot Is Private.\n\n[Made By](https://t.me/Sujan_Ch)**")
 
         await add_user_to_database(bot, message)
 
@@ -394,19 +365,11 @@ async def start_back(_, query: CallbackQuery):
 
 START_BACK_BUTTON = [
         [
-            InlineKeyboardButton("Click To Get API", url="https://vnshortener.com/member/tools/api"),
-        ],
-        [
-            InlineKeyboardButton("All Links", url="https://vnshortener.com/member/links"),
-            InlineKeyboardButton("API", url="https://vnshortener.com/member/tools/api"),
-            InlineKeyboardButton("Profile", url="https://vnshortener.com/member/users/profile"),
-        ],
-        [
-            InlineKeyboardButton("Help", callback_data="HELP_BUT"),
-            InlineKeyboardButton("About", callback_data="ABOUT_BUT"),
-        ],
-        [
-            InlineKeyboardButton("Close", callback_data="close"),
+                    InlineKeyboardButton("📯 Bot Channel 📯", url="https://t.me/Sujan_BotZ"),
+                ],
+                [
+                    InlineKeyboardButton("📣 Owner 📣", url="https://t.me/Sujan_Ch"),
+                    InlineKeyboardButton("🔒 Close 🔒", callback_data="close"),
     ],   
 ]
 
@@ -421,7 +384,6 @@ async def help(_, query: CallbackQuery):
 
 HELP_BUTTON = [
         [
-            InlineKeyboardButton("Help 🔘", callback_data="HELP_BUT"),
             InlineKeyboardButton("About", callback_data="ABOUT_BUT"),
         ],
         [
@@ -436,7 +398,6 @@ async def about(_, query: CallbackQuery):
 
 ABOUT_BUTTON = [
         [
-            InlineKeyboardButton("Help", callback_data="HELP_BUT"),
             InlineKeyboardButton("About 🔘", callback_data="ABOUT_BUT"),
         ],
         [
@@ -483,16 +444,11 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("⚡ Click to Connect ⚡", url="https://vnshortener.com/member/tools/api")
+                        InlineKeyboardButton("📯 Bot Channel 📯", url="https://t.me/Sujan_BotZ")
                     ],
                     [
-                        InlineKeyboardButton("❓ How to Connect ❓", url="https://vnshortener.com")
-                    ],
-                    [
-                        InlineKeyboardButton("⚙️ How to Use ⚙️", url="https://vnshortener.com")
-                    ],
-                    [
-                        InlineKeyboardButton("✅ About Bot ✅", callback_data="aboutdevs")
+                        InlineKeyboardButton("📣 Owner 📣", url="https://sujan_ch"),
+                        InlineKeyboardButton("🤖 About Bot 🤖", callback_data="aboutdevs")
                     ]
                 ]
             )
@@ -541,11 +497,11 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Updates Channel", url="https://t.me/Sujan_BotZ")
+                        InlineKeyboardButton("📯 Bot Channel 📯", url="https://t.me/Sujan_BotZ")
                     ],
                     [
-                        InlineKeyboardButton("About Bot", callback_data="aboutbot"),
-                        InlineKeyboardButton("About Dev", callback_data="aboutdevs")
+                        InlineKeyboardButton("🤖 About Bot 🤖", callback_data="aboutbot"),
+                        InlineKeyboardButton("👨‍💻 About Dev 👨‍💻", callback_data="aboutdevs")
                     ]
                 ]
             )
@@ -573,8 +529,8 @@ async def button(bot: Client, cmd: CallbackQuery):
         await cmd.message.edit("Files Saved Successfully ✅\n\n"
                                "Press below button to get batch link.",
                                reply_markup=InlineKeyboardMarkup([
-                                   [InlineKeyboardButton("Get Link", callback_data="getBatchLink")],
-                                   [InlineKeyboardButton("Close", callback_data="closeMessage")]
+                                   [InlineKeyboardButton("🔗 Get Link", callback_data="getBatchLink")],
+                                   [InlineKeyboardButton("🔒 Close 🔒", callback_data="closeMessage")]
                                ]))
 
     elif "addToBatchFalse" in cb_data:
