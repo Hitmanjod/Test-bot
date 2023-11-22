@@ -7,7 +7,7 @@ class Config(object):
 	API_HASH = os.environ.get("API_HASH", "7e55bf98380e416d5de1c4c567395a32")
 	BOT_TOKEN = os.environ.get("BOT_TOKEN", "6408658466:AAHzFC0Qf6OiYh6di8HZn1FV2zO3bJa5eHE")
 	BOT_USERNAME = os.environ.get("BOT_USERNAME", "StudyXmaterialbot")
-	DB_CHANNEL = int(os.environ.get("DB_CHANNEL", "-1001948924720"))
+	DB_CHANNEL = int(os.environ.get("DB_CHANNEL", "-1001947421238"))
 	BOT_OWNER = int(os.environ.get("BOT_OWNER", "5123039648"))
 	DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://HitmanLaude12:HitmanLaude12@cluster0.logbo9e.mongodb.net/?retryWrites=true&w=majority")
 	UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "")
